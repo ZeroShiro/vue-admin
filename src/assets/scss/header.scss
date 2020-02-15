@@ -1,0 +1,75 @@
+#header-container {
+  height: 50px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  .header {
+    padding: 20px;
+  }
+  .l-header {
+    display: flex;
+    align-items: center;
+    .crumb {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .active {
+      display: none;
+    }
+    .crumb-home {
+      position: absolute;
+      font-size: 14px;
+      margin-top: -1px;
+      margin-left: 60px;
+      color: #606060;
+    }
+    .el-button--mini {
+      padding: 8px 11px;
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .el-button:active {
+      color: #606266;
+      border-color: #dcdfe6;
+      outline: 0;
+    }
+    .el-button:focus,
+    .el-button:hover {
+      color: #606266;
+      border-color: #dcdfe6;
+      background-color: #f8f8f8;
+    }
+  }
+  .r-header {
+    width: 75px;
+    .img-box {
+      position: relative;
+      margin-top: 3px;
+      padding: 0 5px;
+      transition: background 0.3s;
+      .user {
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 20%;
+        padding: 3px;
+      }
+      & > .el-icon-caret-bottom {
+        cursor: pointer;
+        position: absolute;
+        right: -10px;
+        top: 30px;
+        font-size: 12px;
+      }
+      &:hover {
+        background: #f8f8f8;
+      }
+    }
+  }
+}

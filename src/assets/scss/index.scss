@@ -1,0 +1,73 @@
+@import './transition.scss';
+@import './header.scss';
+@import 'tag.scss';
+@import 'home.scss';
+.el-menu {
+  border: none;
+  height: 100%;
+}
+.el-aside {
+  position: fixed;
+  height: 100%;
+  overflow-x: hidden !important;
+}
+
+.m-container {
+  height: 100%;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  .min-name {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    color: #7aaeeb;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+}
+
+.m-container-section {
+  min-height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin-left: 191px;
+  position: relative;
+  z-index: 5;
+  transition: all 0.28s linear;
+  background: #fff;
+  &.active {
+    margin-left: 64px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .m-container {
+    .m-container-section {
+      margin-left: 0px !important;
+      &.active {
+        margin-left: 0px !important;
+      }
+    }
+    .el-aside {
+      position: absolute;
+      left: -200px;
+    }
+  }
+  .showTop.m-active {
+    background: #000;
+    opacity: 0.3;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    position: absolute;
+    z-index: 99;
+    display: block;
+  }
+}
+.showTop {
+  display: none;
+}
+.m-main {
+  height: calc(100% - 90px);
+  background-color: #fafafa;
+}
