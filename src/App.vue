@@ -1,32 +1,71 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view />
+    <router-view></router-view>
   </div>
 </template>
 
+<script>
+export default {
+  data() {
+    return {};
+  },
+  mounted() {
+   
+    this.checkDevice();
+    window.addEventListener('resize', this.checkDevice); // 监听窗口大小变化
+  },
+  methods: {
+    isMobile() {
+      let flag = navigator.userAgent.match(
+        /(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i
+      );
+      return flag;
+    },
+    checkDevice() {
+      this.$store.commit('setIsHeight', window.innerWidth);
+
+      if(window.innerHeight > 760 && !this.isMobile()){
+        this.$store.commit('showTop', false);
+
+    
+        this.$store.commit('showAside', true);
+        return;
+      }
+      if(window.innerHeight <= 760 && !this.isMobile()){
+        this.$store.commit('showTop', false);
+
+      
+        this.$store.commit('showAside', false);
+        return;
+      }
+
+      if (this.isMobile()){
+        this.$store.commit('showTop', true);
+
+   
+        this.$store.commit('showAside', false);
+        return
+      }
+
+      // if (this.isMobile()) {
+      //   this.$store.commit('showTop', true);
+      //   this.$store.commit('showAside', false);
+      // } else {
+      //   this.$store.commit('showTop', false);
+      //   this.$store.commit('showAside', true);
+      // }
+
+   
+    },
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkDevice); // 移除监听
+  },
+};
+</script>
+
 <style lang="scss">
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  height: 100vh;
 }
 </style>
