@@ -23,6 +23,7 @@ export default {
     },
     checkDevice() {
       this.$store.commit('setIsHeight', window.innerWidth);
+      
 
       if(window.innerHeight > 760 && !this.isMobile()){
         this.$store.commit('showTop', false);
