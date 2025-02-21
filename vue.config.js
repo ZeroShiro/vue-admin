@@ -26,10 +26,10 @@ module.exports = {
   configureWebpack: {
     externals: {
       BMap: "BMap",
-      echarts: "echarts",
-      axios: "axios",
-      vue: "Vue",
-      "element-ui": "ELEMENT"
+      // echarts: "echarts",
+      // axios: "axios",
+      // vue: "Vue",
+      // "element-ui": "ELEMENT"
     },
     plugins: [
       new CompressionWebpackPlugin({
