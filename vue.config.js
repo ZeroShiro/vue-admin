@@ -21,7 +21,7 @@ module.exports = {
     },
     extract: true // 保持 extract 为 true，只在生产环境中有效
   },
-  publicPath: "/",
+  publicPath: "/admin",
   productionSourceMap: false, // 禁用 source map 在生产环境下，提高打包速度
   configureWebpack: {
     externals: {
