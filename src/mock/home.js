@@ -1,4 +1,4 @@
-// import Mock from 'mockjs';
+import Mock from 'mockjs';
 //图表对应数据
 let chartlist = [];
 export default {

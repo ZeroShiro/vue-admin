@@ -1,4 +1,4 @@
-// import Mock from "mockjs";
+import Mock from "mockjs";
 //home组件数据
 import homeApi from "./home";
 import userApi from "./user";
